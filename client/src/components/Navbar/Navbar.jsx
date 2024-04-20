@@ -27,7 +27,9 @@ const Navbar = ({ isHomeScreen }) => {
         <li>
           <a href="/articles">Kidney Health</a>
         </li>
-        <li>Risk Prediction</li>
+        <li>
+          <a href="/predictions">Risk Prediction</a>
+        </li>
         <li>Transplantations</li>
         <li>Donate</li>
         <li>

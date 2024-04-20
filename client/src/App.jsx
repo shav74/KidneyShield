@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import PageNotFound from "./pages/PageNotFound.jsx"
 import Articles from "./pages/Articles.jsx"
 import ArticlePage from "./pages/Article.jsx"
+import Predictions from "./pages/Predictions.jsx"
 let isHomeScreen = true
 
 const router = createBrowserRouter([
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/view",
     element: <ArticlePage />,
+  },
+  {
+    path: "/predictions",
+    element: <Predictions />,
   },
 ])
 

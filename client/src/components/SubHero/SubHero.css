@@ -1,44 +1,45 @@
-.hero {
+.SubHero {
   width: 100%;
-  min-height: 100vh;
+  min-height: 50vh;
   background-size: cover;
   background-position: center;
   color: white;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
+  padding-top: 15vh;
 }
 
-.hero-text {
-  text-align: center;
+.SubHero-text {
+  text-align: left;
   max-width: 800px;
 }
 
-.hero-text h1 {
+.SubHero-text h1 {
   font-size: 60px;
   font-weight: 600;
 }
 
-.hero-text p {
+.SubHero-text p {
   max-width: 700px;
   margin: 10px auto 20px;
 }
 
 /* media queries for responsiveness */
 @media (max-width: 850px) {
-  .hero-text h1 {
+  .SubHero-text h1 {
     font-size: 40px;
   }
 }
 
 @media (max-width: 650px) {
-  .hero-text h1 {
+  .SubHero-text h1 {
     font-size: 30px;
     max-width: 400px;
     margin: auto;
   }
 
-  .hero-text p {
+  .SubHero-text p {
     font-size: 14px;
     margin: 15px auto 30px;
   }
