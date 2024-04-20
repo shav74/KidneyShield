@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./Navbar.css"
 import logo from "../../assets/logo.png"
 import menu_icon from "../../assets/menu-icon.png"
+import { Link } from "react-router-dom"
 
 const Navbar = ({ isHomeScreen }) => {
   const [sticky, setSticky] = useState(false)
@@ -20,8 +21,12 @@ const Navbar = ({ isHomeScreen }) => {
     <nav className={`container ${sticky && isHomeScreen ? "dark-nav" : ""}`}>
       <img src={logo} alt="logo image" className="logo" />
       <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
-        <li>Home</li>
-        <li>Kidney Health</li>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/articles">Kidney Health</a>
+        </li>
         <li>Risk Prediction</li>
         <li>Transplantations</li>
         <li>Donate</li>

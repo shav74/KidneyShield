@@ -46,12 +46,12 @@ const Testimonials = () => {
             <li>
               <div className="slide">
                 <div className="user-info">
-                  <img src={user_1} alt="profile photo" />
                   <div>
                     <h3>Arun Shavinda</h3>
                     <span>Kandana, Sri Lanka</span>
                   </div>
                 </div>
+                <img src={user_1} alt="profile photo" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reprehenderit delectus minima consectetur quod? Architecto eos
@@ -63,12 +63,12 @@ const Testimonials = () => {
             <li>
               <div className="slide">
                 <div className="user-info">
-                  <img src={user_2} alt="profile photo" />
                   <div>
                     <h3>Ava Mora</h3>
                     <span>Kandana, Sri Lanka</span>
                   </div>
                 </div>
+                <img src={user_2} alt="profile photo" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reprehenderit delectus minima consectetur quod? Architecto eos
@@ -80,12 +80,12 @@ const Testimonials = () => {
             <li>
               <div className="slide">
                 <div className="user-info">
-                  <img src={user_3} alt="profile photo" />
                   <div>
                     <h3>Chaniru Shavinda</h3>
                     <span>Kandana, Sri Lanka</span>
                   </div>
                 </div>
+                <img src={user_3} alt="profile photo" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reprehenderit delectus minima consectetur quod? Architecto eos
@@ -97,12 +97,12 @@ const Testimonials = () => {
             <li>
               <div className="slide">
                 <div className="user-info">
-                  <img src={user_4} alt="profile photo" />
                   <div>
                     <h3>Arun Silva</h3>
                     <span>Kandana, Sri Lanka</span>
                   </div>
                 </div>
+                <img src={user_4} alt="profile photo" />
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Reprehenderit delectus minima consectetur quod? Architecto eos

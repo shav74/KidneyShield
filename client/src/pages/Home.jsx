@@ -6,11 +6,16 @@ import Campus from "../components/Campus/Campus"
 import Testimonials from "../components/Article-Slide/Article-Slide"
 import Contact from "../components/Contact/Contact"
 import Hero from "../components/Hero/Hero"
+import HeroImage from "../assets/hero.jpg"
 
 const Home = () => {
   return (
     <div>
-      <Hero />
+      <Hero
+        title={"Healty Kideys, Happy Lives"}
+        des={"lorem for now"}
+        image={HeroImage}
+      />
       <div className="container">
         <Title subTitle="top features" title="How can we help you" />
         <Programs />

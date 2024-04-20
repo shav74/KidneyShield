@@ -6,7 +6,7 @@ import Home from "./pages/Home"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import PageNotFound from "./pages/PageNotFound.jsx"
 import Articles from "./pages/Articles.jsx"
-
+import ArticlePage from "./pages/Article.jsx"
 let isHomeScreen = true
 
 const router = createBrowserRouter([
@@ -18,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/articles",
     element: <Articles />,
+  },
+  {
+    path: "/view",
+    element: <ArticlePage />,
   },
 ])
 
