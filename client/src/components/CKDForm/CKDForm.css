@@ -1,0 +1,81 @@
+.multi-step-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-step.active {
+  background-color: #212ea0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-step {
+  margin-bottom: 20px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-button {
+  padding: 10px 20px;
+  background-color: #212ea0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #212ea0;
+}
+
+.form-button.prev {
+  background-color: #ccc;
+  color: #333;
+}
+
+.form-button.prev:hover {
+  background-color: #bfbfbf;
+}

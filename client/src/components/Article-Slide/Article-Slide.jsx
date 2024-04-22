@@ -111,6 +111,74 @@ const Testimonials = () => {
                 </p>
               </div>
             </li>
+            <li>
+              <div className="slide">
+                <div className="user-info">
+                  <div>
+                    <h3>Arun Silva</h3>
+                    <span>Kandana, Sri Lanka</span>
+                  </div>
+                </div>
+                <img src={user_4} alt="profile photo" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit delectus minima consectetur quod? Architecto eos
+                  tenetur illo, fuga minima rerum corrupti perferendis harum?
+                  Recusandae commodi vitae saepe atque ullam sapiente!
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="slide">
+                <div className="user-info">
+                  <div>
+                    <h3>Arun Silva</h3>
+                    <span>Kandana, Sri Lanka</span>
+                  </div>
+                </div>
+                <img src={user_4} alt="profile photo" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit delectus minima consectetur quod? Architecto eos
+                  tenetur illo, fuga minima rerum corrupti perferendis harum?
+                  Recusandae commodi vitae saepe atque ullam sapiente!
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="slide">
+                <div className="user-info">
+                  <div>
+                    <h3>Arun Silva</h3>
+                    <span>Kandana, Sri Lanka</span>
+                  </div>
+                </div>
+                <img src={user_4} alt="profile photo" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit delectus minima consectetur quod? Architecto eos
+                  tenetur illo, fuga minima rerum corrupti perferendis harum?
+                  Recusandae commodi vitae saepe atque ullam sapiente!
+                </p>
+              </div>
+            </li>
+            <li>
+              <div className="slide">
+                <div className="user-info">
+                  <div>
+                    <h3>Arun Silva</h3>
+                    <span>Kandana, Sri Lanka</span>
+                  </div>
+                </div>
+                <img src={user_4} alt="profile photo" />
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Reprehenderit delectus minima consectetur quod? Architecto eos
+                  tenetur illo, fuga minima rerum corrupti perferendis harum?
+                  Recusandae commodi vitae saepe atque ullam sapiente!
+                </p>
+              </div>
+            </li>
           </ul>
         </div>
       </div>

@@ -8,6 +8,7 @@ import PageNotFound from "./pages/PageNotFound.jsx"
 import Articles from "./pages/Articles.jsx"
 import ArticlePage from "./pages/Article.jsx"
 import Predictions from "./pages/Predictions.jsx"
+import CKDSurvey from "./pages/CKDSurvey.jsx"
 let isHomeScreen = true
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: "/predictions",
     element: <Predictions />,
+  },
+  {
+    path: "/ckdsurvey",
+    element: <CKDSurvey />,
   },
 ])
 
