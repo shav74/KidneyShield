@@ -34,6 +34,7 @@ const CKDForm = () => {
         return (
           <div className="form-step">
             <h2>Step 1: Personal Information</h2>
+            <br />
             <input
               type="text"
               name="firstName"
