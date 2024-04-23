@@ -9,6 +9,8 @@ import Articles from "./pages/Articles.jsx"
 import ArticlePage from "./pages/Article.jsx"
 import Predictions from "./pages/Predictions.jsx"
 import CKDSurvey from "./pages/CKDSurvey.jsx"
+import LoginSignup from "./pages/LoginSignup.jsx"
+
 let isHomeScreen = true
 
 const router = createBrowserRouter([
@@ -33,14 +35,13 @@ const router = createBrowserRouter([
     path: "/ckdsurvey",
     element: <CKDSurvey />,
   },
+  {
+    path: "/login",
+    element: <LoginSignup />,
+  },
 ])
 
 const App = () => {
-  console.log(isHomeScreen)
-  useEffect(() => {
-    isHomeScreen = window.location.pathname === "/"
-  }, [])
-
   return (
     <div>
       <Navbar isHomeScreen={isHomeScreen} />
