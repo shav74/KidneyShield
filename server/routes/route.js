@@ -2,8 +2,13 @@ const express = require("express")
 const router = express.Router()
 const jwt = require("jsonwebtoken")
 
-const { sayhello, signup, login } = require("../controllers/controller")
-const { Users } = require("../models/User")
+const {
+  sayhello,
+  signup,
+  login,
+  changePass,
+  findUser,
+} = require("../controllers/controller")
 
 router.get("/", sayhello)
 
@@ -29,31 +34,8 @@ const fetchUser = async (req, res, next) => {
   }
 }
 
-router.get("/userinfo", fetchUser, async (req, res) => {
-  const userData = await Users.findOne({ _id: req.body.id })
-  const useremail = userData.email
-  res.status(200).send(useremail)
-})
+router.get("/userinfo", fetchUser, findUser)
 
-router.post("/changepass", fetchUser, async (req, res) => {
-  console.log("change pass called")
-  let user = await Users.findOne({ email: req.body.email })
-  if (user) {
-    const conf_pass = req.body.oldpassword === user.password
-    if (conf_pass) {
-      //change password
-      await Users.findOneAndUpdate(
-        { email: req.body.email },
-        { password: req.body.newpassword }
-      )
-      res.status(200).send({ success: true })
-    } else {
-      res.status(400).send({ success: false, errors: "wrong old password" })
-      console.log("wrong old pass")
-    }
-  } else {
-    res.status(200).send({ success: false, errors: "user not found" })
-  }
-})
+router.post("/changepass", fetchUser, changePass)
 
 module.exports = router

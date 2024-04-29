@@ -10,6 +10,7 @@ import ArticlePage from "./pages/Article.jsx"
 import Predictions from "./pages/Predictions.jsx"
 import CKDSurvey from "./pages/CKDSurvey.jsx"
 import LoginSignup from "./pages/LoginSignup.jsx"
+import Myaccount from "./pages/Myaccount.jsx"
 
 let isHomeScreen = true
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginSignup />,
+  },
+  {
+    path: "/profile",
+    element: <Myaccount />,
   },
 ])
 

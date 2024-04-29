@@ -51,8 +51,37 @@ const login = async (req, res) => {
   }
 }
 
+const changePass = async (req, res) => {
+  console.log("change pass called")
+  let user = await Users.findOne({ email: req.body.email })
+  if (user) {
+    const conf_pass = req.body.oldpassword === user.password
+    if (conf_pass) {
+      //change password
+      await Users.findOneAndUpdate(
+        { email: req.body.email },
+        { password: req.body.newpassword }
+      )
+      res.status(200).send({ success: true })
+    } else {
+      res.status(400).send({ success: false, errors: "wrong old password" })
+      console.log("wrong old pass")
+    }
+  } else {
+    res.status(200).send({ success: false, errors: "user not found" })
+  }
+}
+
+const findUser = async (req, res) => {
+  const userData = await Users.findOne({ _id: req.body.id })
+  const useremail = userData.email
+  res.status(200).send(useremail)
+}
+
 module.exports = {
   sayhello,
   signup,
   login,
+  changePass,
+  findUser,
 }

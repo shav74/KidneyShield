@@ -5,7 +5,7 @@ import { useState } from "react"
 import { useContext } from "react"
 
 const Myaccount = () => {
-  const { changepass } = useContext(ShopContext)
+  const { changepass } = useContext(Context)
   const [oldpassword, setoldpassword] = useState("")
   const [newpassword, setnewpassword] = useState("")
   const [email, setemail] = useState("")
