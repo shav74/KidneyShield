@@ -107,3 +107,14 @@
 .form-button.prev:hover {
   background-color: #bfbfbf;
 }
+
+.result-section {
+  margin-top: 20px;
+  align-items: center;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding: 20px;
+  background-color: #edeeef;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}

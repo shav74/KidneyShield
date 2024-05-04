@@ -1,16 +1,21 @@
 import React, { useState } from "react"
 import "./CKDForm.css"
 import white_arrow from "../../assets/white-arrow.png"
+import Title from "../Title/Title"
+import Programs from "../Programs/Programs"
+import Locations from "../Locations/Locations"
 
 const CKDForm = () => {
   const [step, setStep] = useState(1)
+  const [showForm, setShowForm] = useState(true)
+  const [result, setResult] = useState(0)
   const [formData, setFormData] = useState({
-    Occupation: 0,
-    SourceofWater: 2,
-    Age: 45,
-    Gender: 1,
-    MOH: 1,
-    BMI: 25.6,
+    Occupation: "",
+    SourceofWater: "",
+    Age: "",
+    Gender: "",
+    MOH: "",
+    BMI: "",
     bCKD: false,
     bDM: false,
     bHNT: false,
@@ -51,11 +56,20 @@ const CKDForm = () => {
     setStep(step + 1)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(formData)
-    postData("http://127.0.0.1:8000/ckdu", formData)
+
+    const resultFromPost = await postData(
+      "http://127.0.0.1:8000/ckdu",
+      formData
+    )
+    console.log(resultFromPost)
+
+    setResult(resultFromPost)
+    setShowForm(false)
   }
+
   const postData = async (url, data) => {
     try {
       const response = await fetch(url, {
@@ -346,39 +360,222 @@ const CKDForm = () => {
     }
   }
 
-  return (
-    <div className="multi-step-form">
-      <div className="progress-bar">
-        <div className={`progress-step ${step === 1 ? "active" : ""}`}>1</div>
-        <div className={`progress-step ${step === 2 ? "active" : ""}`}>2</div>
-        <div className={`progress-step ${step === 3 ? "active" : ""}`}>3</div>
+  if (!showForm) {
+    const ckd = Number(result) > 0.5
+    return (
+      <div className="result-container">
+        {ckd ? (
+          <>
+            <h1 id="positive-result">You are in risk of CKDu</h1>
+            <p>You have common risk factors</p>
+          </>
+        ) : (
+          <>
+            <h1 id="negative-result">CKD Not Detected</h1>
+            <p>but there are some risk factors</p>
+          </>
+        )}
+        {formData["Occupation"] == 0 && (
+          <div className="result-section">
+            <h2>Occupation</h2>
+            <p>
+              Lorem ipsum dolor sit amet ggs consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["SourceofWater"] == 0 && (
+          <div className="result-section">
+            <h2>Water Sources</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["MOH"] == 0 && (
+          <div className="result-section">
+            <h2>Location</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bDM"] && (
+          <div className="result-section">
+            <h2>Diabetes</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bHNT"] && (
+          <div className="result-section">
+            <h2>Hypertention/Heart deceases</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bSnakeBite"] && (
+          <div className="result-section">
+            <h2>Snake Bites and Poisoning</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bRenalCalculi"] && (
+          <div className="result-section">
+            <h2>Kidney Stones</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bCKD"] ||
+          (formData["bCKDu"] && (
+            <div className="result-section">
+              <h2>CKD</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+                similique eaque voluptates neque architecto, suscipit voluptatem
+                quibusdam dignissimos error nam tenetur pariatur quod fugit!
+              </p>
+            </div>
+          ))}
+        {formData["bHDL"] && (
+          <div className="result-section">
+            <h2>Colestrol</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bUTI"] && (
+          <div className="result-section">
+            <h2>Urinary Tract Infection</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+              similique eaque voluptates neque architecto, suscipit voluptatem
+              quibusdam dignissimos error nam tenetur pariatur quod fugit!
+            </p>
+          </div>
+        )}
+        {formData["bCKDFamily"] ||
+          (formData["bCKDUFamily"] && (
+            <div className="result-section">
+              <h2>Family Kidney issues</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+                similique eaque voluptates neque architecto, suscipit voluptatem
+                quibusdam dignissimos error nam tenetur pariatur quod fugit!
+              </p>
+            </div>
+          ))}
+        {formData["bDMFamily"] ||
+          (formData["bHTNFamily"] && (
+            <div className="result-section">
+              <h2>Family other deceases</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+                similique eaque voluptates neque architecto, suscipit voluptatem
+                quibusdam dignissimos error nam tenetur pariatur quod fugit!
+              </p>
+            </div>
+          ))}
+        {formData["bCancer"] ||
+          formData["bBA"] ||
+          formData["bDengue"] ||
+          formData["bMalaria"] ||
+          (formData["bLepto"] && (
+            <div className="result-section">
+              <h2>Other Causes</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Consequuntur saepe dolorem, doloribus fugiat reprehenderit, cum
+                similique eaque voluptates neque architecto, suscipit voluptatem
+                quibusdam dignissimos error nam tenetur pariatur quod fugit!
+              </p>
+            </div>
+          ))}
+        <Locations />
       </div>
-      <form onSubmit={handleSubmit} className="form-container">
-        {renderStep()}
-        <div className="button-container">
-          {step > 1 && (
-            <button type="button" onClick={handlePrev} className="btn dark-btn">
-              <img
-                src={white_arrow}
-                alt="small arrow button"
-                style={{ transform: "rotate(180deg)" }}
-              />
-              &nbsp; Prev
-            </button>
-          )}
-          {step < 3 && (
-            <button type="button" onClick={handleNext} className="btn dark-btn">
-              Next <img src={white_arrow} alt="small arrow button" />
-            </button>
-          )}
-          {step === 3 && (
-            <button type="submit" className="btn dark-btn">
-              Submit <img src={white_arrow} alt="small arrow button" />
-            </button>
-          )}
+    )
+  }
+  return (
+    <>
+      <Title title={"CKD Form"} subTitle={"get more"} />
+      <div className="multi-step-form">
+        <div className="progress-bar">
+          <div className={`progress-step ${step === 1 ? "active" : ""}`}>1</div>
+          <div className={`progress-step ${step === 2 ? "active" : ""}`}>2</div>
+          <div className={`progress-step ${step === 3 ? "active" : ""}`}>3</div>
         </div>
-      </form>
-    </div>
+        <form onSubmit={handleSubmit} className="form-container">
+          {renderStep()}
+          <div className="button-container">
+            {step > 1 && (
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="btn dark-btn"
+              >
+                <img
+                  src={white_arrow}
+                  alt="small arrow button"
+                  style={{ transform: "rotate(180deg)" }}
+                />
+                &nbsp; Prev
+              </button>
+            )}
+            {step < 3 && (
+              <button
+                type="button"
+                onClick={handleNext}
+                className="btn dark-btn"
+              >
+                Next <img src={white_arrow} alt="small arrow button" />
+              </button>
+            )}
+            {step === 3 && (
+              <button type="submit" className="btn dark-btn">
+                Submit <img src={white_arrow} alt="small arrow button" />
+              </button>
+            )}
+          </div>
+        </form>
+      </div>
+      <Title title={"Get to know more"} subTitle={"facts for you"} />
+      <Programs />
+      <Title title={"Get Help"} subTitle={"best places to get help"} />
+    </>
   )
 }
 

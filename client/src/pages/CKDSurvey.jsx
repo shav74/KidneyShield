@@ -13,10 +13,7 @@ const CKDSurvey = () => {
         image={"https://placehold.co/600x400?text=CKD+prediction"}
       />
       <div className="container">
-        <Title title={"Sya Something Here"} subTitle={"get to know This"} />
         <CKDForm />
-        <Title subTitle={"facts"} title={"get to knoe more"} />
-        <Programs />
       </div>
     </div>
   )
