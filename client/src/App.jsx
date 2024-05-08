@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 
 import Navbar from "./components/Navbar/Navbar"
 import Footer from "./components/Footer/Footer"
@@ -11,6 +11,8 @@ import Predictions from "./pages/Predictions.jsx"
 import CKDSurvey from "./pages/CKDSurvey.jsx"
 import LoginSignup from "./pages/LoginSignup.jsx"
 import Myaccount from "./pages/Myaccount.jsx"
+import Transplantations from "./pages/Transplantations.jsx"
+import Product from "./pages/Product.jsx"
 
 let isHomeScreen = true
 
@@ -18,7 +20,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <PageNotFound />,
   },
   {
     path: "/articles",
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Myaccount />,
+  },
+  {
+    path: "/transplantations",
+    element: <Transplantations />,
+  },
+  {
+    path: "/product/:productId",
+    element: <Product />,
   },
 ])
 

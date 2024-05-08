@@ -11,9 +11,10 @@ const Testimonials = () => {
   const slider = useRef()
   let tx = 0
 
+  const slideAmount = window.innerWidth <= 768 ? 12.5 : 25
   const slideFoward = () => {
     if (tx > -50) {
-      tx -= 25
+      tx -= slideAmount
     } else {
       tx = 0
     }
@@ -21,7 +22,7 @@ const Testimonials = () => {
   }
   const slideBackward = () => {
     if (tx < 0) {
-      tx += 25
+      tx += slideAmount
     }
     slider.current.style.transform = `translateX(${tx}%)`
   }

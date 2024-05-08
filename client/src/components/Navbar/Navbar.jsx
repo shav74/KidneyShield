@@ -30,10 +30,42 @@ const Navbar = ({ isHomeScreen }) => {
         <li>
           <a href="/predictions">Risk Prediction</a>
         </li>
-        <li>Transplantations</li>
+        <li>
+          <a href="/transplantations">Transplantations</a>
+        </li>
         <li>Donate</li>
         <li>
-          <button className="btn">Contact Us</button>
+          {localStorage.getItem("auth-token") ? (
+            <li>
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "10px 25px",
+                  backgroundColor: "white",
+                  borderRadius: "30px",
+                }}
+                href="/profile"
+              >
+                Profile
+              </a>
+            </li>
+          ) : (
+            <li>
+              <a
+                style={{
+                  textDecoration: "none",
+                  color: "black",
+                  padding: "10px 25px",
+                  backgroundColor: "white",
+                  borderRadius: "30px",
+                }}
+                href="/login"
+              >
+                Log In/Sign Up
+              </a>
+            </li>
+          )}
         </li>
       </ul>
       <img

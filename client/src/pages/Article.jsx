@@ -1,8 +1,15 @@
-import React from "react"
+import React, { useContext } from "react"
 import "./CSS/ArticlePage.css"
 import SubHero from "../components/SubHero/SubHero"
+import { Context } from "../context/Context"
+import { useParams } from "react-router-dom"
 
-const Article = ({ title, subTitile, summary, image }) => {
+const Article = () => {
+  const { all_article } = useContext(Context)
+  const { articleId } = useParams()
+  const article = all_article.find((e) => e.id === Number(articleId))
+  console.log(article)
+
   return (
     <>
       <SubHero
@@ -12,53 +19,14 @@ const Article = ({ title, subTitile, summary, image }) => {
       />
       <div className="container">
         <div className="article-container">
-          <h1>what to do</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-            beatae adipisci ab corporis non sapiente architecto voluptate qui,
-            eaque omnis. Sapiente nostrum voluptas distinctio illum odit!
-            Deleniti veniam neque vero!Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Saepe beatae adipisci ab corporis non sapiente
-            architecto voluptate qui, eaque omnis. Sapiente nostrum voluptas
-            distinctio illum odit! Deleniti veniam neque vero!Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Saepe beatae adipisci ab
-            corporis non sapiente architecto voluptate qui, eaque omnis.
-            Sapiente nostrum voluptas distinctio illum odit! Deleniti veniam
-            neque vero!
-          </p>
-          <h1>what to do</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-            beatae adipisci ab corporis non sapiente architecto voluptate qui,
-            eaque omnis. Sapiente nostrum voluptas distinctio illum odit!
-            Deleniti veniam neque vero!Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Saepe beatae adipisci ab corporis non sapiente
-            architecto voluptate qui, eaque omnis. Sapiente nostrum voluptas
-            distinctio illum odit! Deleniti veniam neque vero!Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Saepe beatae adipisci ab
-            corporis non sapiente architecto voluptate qui, eaque omnis.
-            Sapiente nostrum voluptas distinctio illum odit! Deleniti veniam
-            neque vero!
-          </p>
-          <h1>what to do</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-            beatae adipisci ab corporis non sapiente architecto voluptate qui,
-            eaque omnis. Sapiente nostrum voluptas distinctio illum odit!
-            Deleniti veniam neque vero!Lorem ipsum dolor sit amet consectetur,
-            adipisicing elit. Saepe beatae adipisci ab corporis non sapiente
-            architecto voluptate qui, eaque omnis. Sapiente nostrum voluptas
-            distinctio illum odit! Deleniti veniam neque vero!Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Saepe beatae adipisci ab
-            corporis non sapiente architecto voluptate qui, eaque omnis.
-            Sapiente nostrum voluptas distinctio illum odit! Deleniti veniam
-            neque vero!
-          </p>
           <img
             className="card-image"
             src="https://via.placeholder.com/600x400"
             alt="profile picture"
           />
+          <h1>{article.title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: article.content }} />
+          <p>{article.summary}</p>
           <br />
           <button>save</button>
           <button>back to top</button>

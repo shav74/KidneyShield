@@ -8,6 +8,12 @@ const {
   login,
   changePass,
   findUser,
+  allproducts,
+  addproduct,
+  removeproduct,
+  allArticles,
+  addArticle,
+  removeArticle,
 } = require("../controllers/controller")
 
 router.get("/", sayhello)
@@ -37,5 +43,17 @@ const fetchUser = async (req, res, next) => {
 router.get("/userinfo", fetchUser, findUser)
 
 router.post("/changepass", fetchUser, changePass)
+
+router.get("/waitlist", allproducts)
+
+router.get("/articles", allArticles)
+
+router.post("/addproduct", addproduct)
+
+router.post("/removeproduct", removeproduct)
+
+router.post("/addarticle", addArticle)
+
+router.post("/removearticle", removeArticle)
 
 module.exports = router

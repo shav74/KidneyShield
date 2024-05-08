@@ -2,13 +2,18 @@ import React from "react"
 import "./CSS/Myaccount.css"
 import { Context } from "../context/Context"
 import { useState } from "react"
-import { useContext } from "react"
+import { useContext, useAu } from "react"
 
 const Myaccount = () => {
   const { changepass } = useContext(Context)
   const [oldpassword, setoldpassword] = useState("")
   const [newpassword, setnewpassword] = useState("")
   const [email, setemail] = useState("")
+
+  const logout = () => {
+    localStorage.removeItem("auth-token")
+    window.location.href = "/login"
+  }
 
   return (
     <div className="myaccount">
@@ -53,6 +58,13 @@ const Myaccount = () => {
               </button>
             </div>
           </form>
+          <button
+            onClick={() => {
+              logout()
+            }}
+          >
+            Log Out
+          </button>
         </div>
       </div>
     </div>
