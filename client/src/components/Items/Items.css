@@ -1,5 +1,6 @@
 .item {
   width: 350px;
+  margin: 0px 10px;
 }
 
 .item-img {
@@ -15,20 +16,18 @@
 
 .item-prices {
   display: flex;
-  gap: 10px;
+  gap: 30px;
 }
 
 .item-price-old {
-  font-size: 18px;
   font-weight: 600;
 }
 
 .item-price-new {
-  font-size: 18px;
   font-weight: 500;
 }
 
 .item:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition: 0.5s;
 }

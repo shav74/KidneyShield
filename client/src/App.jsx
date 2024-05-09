@@ -13,6 +13,8 @@ import LoginSignup from "./pages/LoginSignup.jsx"
 import Myaccount from "./pages/Myaccount.jsx"
 import Transplantations from "./pages/Transplantations.jsx"
 import Product from "./pages/Product.jsx"
+import Article from "./pages/Article.jsx"
+import Help from "./pages/Help.jsx"
 
 let isHomeScreen = true
 
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
   {
     path: "/product/:productId",
     element: <Product />,
+  },
+  {
+    path: "/articles/:articleId",
+    element: <Article />,
+  },
+  {
+    path: "/help",
+    element: <Help />,
   },
 ])
 

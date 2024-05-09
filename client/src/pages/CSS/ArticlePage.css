@@ -7,14 +7,32 @@
   margin-top: 40px;
   padding: 20px;
 }
+
+.article-container img {
+  max-width: 55vw;
+}
+
 .article-container p {
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.article-container h2 {
+  margin: 30px 0px;
+}
+
+.article-container li {
+  margin: 10px 0px;
 }
 
 @media (max-width: 850px) {
   .article-container {
     margin-left: 5%;
     margin-right: 5%;
+  }
+
+  .article-container img {
+    max-width: 80vw;
   }
 }
 

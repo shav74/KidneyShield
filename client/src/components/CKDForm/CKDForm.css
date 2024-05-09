@@ -118,3 +118,57 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
+
+.result-section h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+#disclaimer {
+  margin: 0px 25vw;
+  font-size: 1.1rem;
+}
+
+.main-result {
+  margin: 6vh 0px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#positive-result {
+  color: #ff0000;
+}
+
+#negative-result {
+  color: #008000;
+}
+
+#results-intro {
+  margin: 5vh 20vw;
+}
+
+#risk-factors-heading {
+  margin: 5vh 20vw;
+  color: #c3622e;
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 768px) {
+  #disclaimer {
+    margin: 0px 5vw;
+    font-size: 1rem;
+  }
+
+  .result-section {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  #results-intro {
+    margin: 5vh 5vw;
+  }
+
+  #risk-factors-heading {
+    margin: 5vh 5vw;
+  }
+}

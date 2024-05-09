@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./Waitlist.css"
 import Items from "../Items/Items"
+import Title from "../Title/Title"
 
 const NewCollections = () => {
   const [item, setItem] = useState([])
@@ -13,7 +14,7 @@ const NewCollections = () => {
 
   return (
     <div className="waitlist">
-      <h1>New Products</h1>
+      <Title title={"Waitlist"} subTitle={"Help another one to live"} />
       <div className="collections">
         {item.map((item, i) => {
           return (

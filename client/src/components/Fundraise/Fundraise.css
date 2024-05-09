@@ -1,0 +1,30 @@
+.fundraise {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.fundraise h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.fundraise-section {
+  width: 300px;
+  margin: 1rem;
+  text-align: center;
+}
+
+.fundraise-section img {
+  width: 100%;
+  height: auto;
+}
+
+.fundraise-section h2 {
+  margin: 1rem 0;
+}
+
+.fundraise-section p {
+  margin-bottom: 1rem;
+}

@@ -2,7 +2,7 @@ import React from "react"
 import "./Hero.css"
 import dark_arrow from "../../assets/dark-arrow.png"
 
-const Hero = ({ title, des, image }) => {
+const Hero = ({ title, des, image, link }) => {
   return (
     <div
       style={{
@@ -13,10 +13,12 @@ const Hero = ({ title, des, image }) => {
       <div className="hero-text">
         <h1>{title}</h1>
         <p>{des}</p>
-        <button className="btn">
-          Explore More{" "}
-          <img src={dark_arrow} alt="small arrow for continue button" />
-        </button>
+        <a href={link}>
+          <button className="btn">
+            Explore More{" "}
+            <img src={dark_arrow} alt="small arrow for continue button" />
+          </button>
+        </a>
       </div>
     </div>
   )

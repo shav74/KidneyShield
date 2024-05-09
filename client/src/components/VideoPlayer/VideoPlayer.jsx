@@ -1,9 +1,8 @@
 import React, { useRef } from "react"
 import "./VideoPlayer.css"
-import video from "../../assets/video.mp4"
 import PropTypes from "prop-types"
 
-const VideoPlayer = ({ playState, setPlayerState }) => {
+const VideoPlayer = ({ playState, setPlayerState, source }) => {
   const player = useRef(null)
   const closePlayer = (e) => {
     if (e.target === player.current) {
@@ -19,7 +18,7 @@ const VideoPlayer = ({ playState, setPlayerState }) => {
       onClick={closePlayer}
       className={`video-player ${playState ? "" : "hide"}`}
     >
-      <video src={video} autoPlay controls></video>
+      <video src={source} autoPlay controls muted></video>
     </div>
   )
 }

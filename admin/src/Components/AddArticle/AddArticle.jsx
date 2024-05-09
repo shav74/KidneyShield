@@ -9,6 +9,7 @@ const AddArticle = () => {
     content: "",
     image: "",
     summary: "",
+    category: "",
   });
 
   const imageHandler = (e) => {
@@ -70,6 +71,24 @@ const AddArticle = () => {
       </div>
 
       <div className="addproduct-itemfield">
+        <p>Select Category</p>
+        <select
+          value={articleDetails.category}
+          onChange={changeHandler}
+          name="category"
+          className="add-product-selector"
+        >
+          <option disabled value="">
+            Select an option
+          </option>
+          <option value="health">Kidney Health</option>
+          <option value="news">News</option>
+          <option value="latest">Latest</option>
+          <option value="events">Events</option>
+        </select>
+      </div>
+
+      <div className="addproduct-itemfield">
         <p>Content</p>
         <textarea
           value={articleDetails.content}
@@ -78,6 +97,7 @@ const AddArticle = () => {
           placeholder="Write Article Content Here"
         ></textarea>
       </div>
+
       <div className="addproduct-itemfield">
         <p>Add Image</p>
         <label htmlFor="file-input">

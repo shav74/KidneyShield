@@ -33,7 +33,9 @@ const Navbar = ({ isHomeScreen }) => {
         <li>
           <a href="/transplantations">Transplantations</a>
         </li>
-        <li>Donate</li>
+        <li>
+          <a href="/help">Save a Life</a>
+        </li>
         <li>
           {localStorage.getItem("auth-token") ? (
             <li>

@@ -14,13 +14,13 @@ const items = (props) => {
         />
       </Link>
       <div>
-        <p>{props.listingName}</p>
-        <p style={{ color: "grey" }}>Name: {props.name}</p>
-        <p style={{ color: "grey" }}>Age: {props.age}</p>
-      </div>
-      <div className="item-prices">
+        <h2>{props.name}</h2>
         <div className="item-price-new">Blood Type :{props.bloodType}</div>
         <div className="item-price-old">Urgency : {props.urgency}</div>
+      </div>
+      <div className="item-prices">
+        <p style={{ color: "grey" }}>Name: {props.name}</p>
+        <p style={{ color: "grey" }}>Age: {props.age}</p>
       </div>
     </div>
   )

@@ -1,17 +1,17 @@
-import React from "react";
-import "./DescriptionBox.css";
+import React from "react"
+import "./DescriptionBox.css"
 
 const DescriptionBox = (props) => {
-  const { product } = props;
+  const { product } = props
 
   return (
     <div className="descriptionbox">
       <div className="descriptionbox-navigator">
-        <div className="descriptionbox-nav-box">Product Description</div>
+        <div className="descriptionbox-nav-box">More Details</div>
       </div>
       <div className="descriptionbox-description">{product.description}</div>
     </div>
-  );
-};
+  )
+}
 
-export default DescriptionBox;
+export default DescriptionBox

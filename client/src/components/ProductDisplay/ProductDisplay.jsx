@@ -10,32 +10,32 @@ const ProductDisplay = (props) => {
         <div className="productdisplay-img">
           <img className="productdisplay-main-img" src={product.image} alt="" />
         </div>
+        <br />
       </div>
       <div className="productdisplay-right">
         <h1>{product.listingName}</h1>
         <p className="productdisplay-right-category">
-          <span>Category:</span>
-          {product.name}
+          <span>Urgency: </span>
+          {product.urgency}
+          <br />
+          <br />
+          <span>Blood Type: </span>
+          {product.bloodType} <br />
+          <span>Gender: </span>
+          {product.geder} <br />
+          <span>Body Weight: </span>
+          {product.bodyWeight} <br />
+          <span>Height: </span>
+          {product.height} <br />
+          <span>Special Conditions: </span>
+          {product.specialConditions} <br />
+          <span>Compatibility: </span>
+          {product.compatibility} <br />
+          <span>Contact: </span>
+          {product.contact} <br />
         </p>
-        <div className="productdisplay-right-prices">
-          <div className="productdisplay-right-price-old">
-            Was: {product.bloodType}
-          </div>
-          <div className="productdisplay-right-price-new">
-            Now: {product.urgency}
-          </div>
-        </div>
-        <div className="productdisplay-right-description">
-          {product.description}
-        </div>
-
-        <button
-          onClick={() => {
-            addToCart(product.id)
-          }}
-        >
-          Contact
-        </button>
+        <br />
+        <br />
       </div>
     </div>
   )

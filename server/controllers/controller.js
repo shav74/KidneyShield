@@ -150,7 +150,7 @@ const addArticle = async (req, res) => {
     articleId = 1
   }
 
-  const { title, content, image, summary } = req.body
+  const { title, content, image, summary, category } = req.body
 
   const article = new Articles({
     id: articleId,
@@ -158,6 +158,7 @@ const addArticle = async (req, res) => {
     content: content,
     image: image,
     summary: summary,
+    category: category,
   })
   console.log(article)
   await article.save()
