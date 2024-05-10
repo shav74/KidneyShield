@@ -1,9 +1,25 @@
 import React from "react"
 import white_arrow from "../../assets/white-arrow.png"
-import Title from "../Title/Title"
-import ArticleSlide from "../Article-Slide/Article-Slide"
+import md5 from "crypto-js/md5"
 
 const Donate = () => {
+  let merchantSecret =
+    "MTM5NjcxMDMyMjIyNDMwNDU0NTkyNjU2Njg0NTU0MzYxODU1MzIyOA=="
+  let merchantId = "1224888"
+  //generate random order id
+  let orderId = 2
+  let amount = 1000
+  let hashedSecret = md5(merchantSecret).toString().toUpperCase()
+  let amountFormated = parseFloat(amount)
+    .toLocaleString("en-us", { minimumFractionDigits: 2 })
+    .replaceAll(",", "")
+  let currency = "LKR"
+  let hash = md5(
+    merchantId + orderId + amountFormated + currency + hashedSecret
+  )
+    .toString()
+    .toUpperCase()
+
   return (
     <>
       <div
@@ -23,31 +39,31 @@ const Donate = () => {
             boxShadow: "0px 4px 8px rgba(0, 0, 0, 0.3)",
           }}
         >
-          <form action="">
-            <label htmlFor="">Your name</label>
+          <form action="https://sandbox.payhere.lk/pay/checkout" method="post">
+            <input type="hidden" name="merchant_id" value={merchantId} />
+            <input type="hidden" name="return_url" value="/help" />
+            <input type="hidden" name="cancel_url" value="/" />
             <input
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-              required
+              type="hidden"
+              name="notify_url"
+              value="https://f3dc-112-134-135-50.ngrok-free.app/"
             />
-            <label htmlFor="">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Enter your mobile number"
-              required
-            />
+            <br />
             <label htmlFor="">Amount</label>
-            <input type="number" name="amount" placeholder="LKR" required />
-
-            <label htmlFor="">Write your message here</label>
-            <textarea
-              name="messafe"
-              rows="6"
-              placeholder="Enter your message"
-              required
-            ></textarea>
+            <input type="hidden" name="order_id" value={orderId} />
+            <input type="hidden" name="items" value="Donations" />
+            <input type="hidden" name="currency" value={currency} hidden />
+            <input type="number" name="amount" placeholder="LKR" />
+            <br />
+            Customer Details <br />
+            <input type="text" name="first_name" placeholder="First Name" />
+            <input type="text" name="last_name" placeholder="Last name" />
+            <input type="text" name="email" placeholder="Email" />
+            <input type="text" name="phone" placeholder="Phone No" />
+            <input type="text" name="address" placeholder="Address" />
+            <input type="text" name="city" placeholder="City" />
+            <input type="text" name="country" placeholder="Country" />
+            <input type="hidden" name="hash" value={hash} />
             <button type="submit" className="btn dark-btn">
               Donate
               <img src={white_arrow} alt="small arrow button" />

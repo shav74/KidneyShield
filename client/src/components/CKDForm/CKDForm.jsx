@@ -81,14 +81,14 @@ const CKDForm = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data), // Convert the JavaScript object to a JSON string
+        body: JSON.stringify(data),
       })
 
       if (!response.ok) {
         throw new Error("Network response was not ok")
       }
 
-      const jsonResponse = await response.json() // Assuming the server responds with JSON
+      const jsonResponse = await response.json()
       console.log("Success:", jsonResponse)
       return jsonResponse
     } catch (error) {
