@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import "./CSS/LoginSignup.css"
 import info_icon from "../assets/info-icon.png"
+import "./CSS/LoginSignup.css"
+import Breadcrum from "../components/Breadcrums/Breadcrum"
 
 const LoginSignup = () => {
   const [state, setState] = useState("Login")
@@ -59,10 +60,11 @@ const LoginSignup = () => {
   }
 
   return (
-    <div className="loginsignup">
-      <div className="loginsignup-container">
-        <h1>{state}</h1>
-        <div className="loginsignup-fields">
+    <>
+      <Breadcrum />
+      <div className="login-form">
+        <h3>{state}</h3>
+        <div className="login-col">
           {state === "Sign Up" ? (
             <input
               name="username"
@@ -89,13 +91,9 @@ const LoginSignup = () => {
             placeholder="Password"
           />
         </div>
-        <div className="loginsignup-info">
-          <img className="info" src={info_icon} />
-          <p>
-            You can save items on cart using an account for future purchases.
-          </p>
-        </div>
+        <div className="loginsignup-info"></div>
         <button
+          className="btn dark-btn"
           onClick={() => {
             state === "Login" ? login() : signup()
           }}
@@ -125,10 +123,8 @@ const LoginSignup = () => {
             </span>
           </p>
         )}
-        <br />
-        <br />
       </div>
-    </div>
+    </>
   )
 }
 

@@ -19,7 +19,9 @@ const Navbar = ({ isHomeScreen }) => {
 
   return (
     <nav className={`container ${sticky && isHomeScreen ? "dark-nav" : ""}`}>
-      <img src={logo} alt="logo image" className="logo" />
+      <a href="/">
+        <img src={logo} alt="logo image" className="logo" />
+      </a>
       <ul className={mobileMenu ? "" : "hide-mobile-menu"}>
         <li>
           <a href="/">Home</a>
@@ -64,7 +66,7 @@ const Navbar = ({ isHomeScreen }) => {
                 }}
                 href="/login"
               >
-                Log In/Sign Up
+                Join
               </a>
             </li>
           )}

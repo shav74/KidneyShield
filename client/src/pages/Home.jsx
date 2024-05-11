@@ -11,7 +11,7 @@ import VideoPlayer from "../components/VideoPlayer/VideoPlayer"
 import image_1 from "../assets/kidney-analysis.jpg"
 import image_2 from "../assets/kidney-donation.jpg"
 import image_3 from "../assets/kidney-basics.jpg"
-import source from "../assets/video.mp4"
+import source from "../assets/video3.mp4"
 import thumbnail from "../assets/transplant1.jpg"
 
 import gallery_1 from "../assets/gallery-1.jpg"

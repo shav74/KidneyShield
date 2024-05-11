@@ -36,8 +36,12 @@
   font-size: 16px;
 }
 
-.productdisplay-right-category span {
-  font-weight: 600;
+.productdisplay-right-category p {
+  margin: 5vh 0px;
+}
+
+.productdisplay-right-category p span {
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {

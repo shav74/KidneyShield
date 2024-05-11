@@ -13,27 +13,41 @@ const ProductDisplay = (props) => {
         <br />
       </div>
       <div className="productdisplay-right">
-        <h1>{product.listingName}</h1>
-        <p className="productdisplay-right-category">
-          <span>Urgency: </span>
-          {product.urgency}
-          <br />
-          <br />
-          <span>Blood Type: </span>
-          {product.bloodType} <br />
-          <span>Gender: </span>
-          {product.geder} <br />
-          <span>Body Weight: </span>
-          {product.bodyWeight} <br />
-          <span>Height: </span>
-          {product.height} <br />
-          <span>Special Conditions: </span>
-          {product.specialConditions} <br />
-          <span>Compatibility: </span>
-          {product.compatibility} <br />
-          <span>Contact: </span>
-          {product.contact} <br />
-        </p>
+        <h1>{product.name}</h1>
+        <div className="productdisplay-right-category">
+          <p>
+            <span>Urgency: </span>
+            {product.urgency}
+          </p>
+          <p>
+            <span>Blood Type: </span>
+            {product.bloodType}
+          </p>
+          <p>
+            <span>Gender: </span>
+            {product.gender}
+          </p>
+          <p>
+            <span>Body Weight: </span>
+            {product.bodyWeight}
+          </p>
+          <p>
+            <span>Height: </span>
+            {product.height}
+          </p>
+          <p>
+            <span>Special Conditions: </span>
+            {product.specialConditions}
+          </p>
+          <p>
+            <span>Compatibility: </span>
+            {product.compatibility}
+          </p>
+          <p>
+            <span>Contact: </span>
+            {product.contact}
+          </p>
+        </div>
         <br />
         <br />
       </div>

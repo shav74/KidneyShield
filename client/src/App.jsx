@@ -15,6 +15,7 @@ import Transplantations from "./pages/Transplantations.jsx"
 import Product from "./pages/Product.jsx"
 import Article from "./pages/Article.jsx"
 import Help from "./pages/Help.jsx"
+import DiabetesSurvey from "./pages/DiabetesSurvey.jsx"
 
 let isHomeScreen = true
 
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/ckdsurvey",
     element: <CKDSurvey />,
+  },
+  {
+    path: "/diabetessurvey",
+    element: <DiabetesSurvey />,
   },
   {
     path: "/login",

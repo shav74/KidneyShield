@@ -25,7 +25,7 @@ const ArticleSlide = ({ category }) => {
   const slider = useRef()
   let tx = 0
   const isMobile = window.innerWidth <= 768
-  const slideAmount = isMobile ? 12.5 : 25
+  const slideAmount = isMobile ? 8.45 : 25
 
   const slideFoward = () => {
     if (tx > -50) {
