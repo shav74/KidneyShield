@@ -39,11 +39,7 @@ const Donate = () => {
             <input type="hidden" name="merchant_id" value={merchantId} />
             <input type="hidden" name="return_url" value="/" />
             <input type="hidden" name="cancel_url" value="/" />
-            <input
-              type="hidden"
-              name="notify_url"
-              value="https://www.iwmi.cgiar.org/blogs"
-            />
+            <input type="hidden" name="notify_url" value="/" />
             <br />
             <label htmlFor="">Amount</label>
             <input type="hidden" name="order_id" value={orderId} />
