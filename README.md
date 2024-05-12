@@ -38,6 +38,7 @@ To run KidneyShield locally, follow these steps:
 - Install dependencies: `pip install fastapi uvicorn pydantic pickle5 scikit-learn numpy`
 - Change to the ML Model directory: `cd "absolute path to ML Model Folder"`
 - Start the API: `uvicorn model_api:app`
+- importatnt: API should be running on port 8000 to acces. if 8000 is accupied please reallocate the port to the API
 
 After following these steps, you should have three running servers for the client, admin, and server, as well as the machine learning model API.
 
