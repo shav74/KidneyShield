@@ -41,6 +41,9 @@ To run KidneyShield locally, follow these steps:
 
 After following these steps, you should have three running servers for the client, admin, and server, as well as the machine learning model API.
 
+## Accessing the web app
+open `http://localhost:{PORT}/` on your browser. (client siede port number is 5173 by default. otherwise you can find it in the client terminal)
+
 ## License
 
 KidneyShield is released under the [MIT License](LICENSE).
