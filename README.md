@@ -7,9 +7,9 @@
 To run KidneyShield locally, follow these steps:
 
 1. **Clone the repository**
-   clone the github repository with - `git clone https://github.com/shav74/KidneyShield.git`
+ - clone the github repository with - `git clone https://github.com/shav74/KidneyShield.git`
 
-3. **Install dependencies**
+2. **Install dependencies**
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [Anaconda](https://www.anaconda.com/products/distribution)
